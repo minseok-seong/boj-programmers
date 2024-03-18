@@ -1,16 +1,14 @@
 const input = require("fs").readFileSync("/dev/stdin").toString().split("\n");
 
-const count = parseInt(input[0]);
-const inputList = input[1].split(" ").map((el) => parseInt(el));
+const arr = input[1].split(" ").map((a) => parseInt(a));
 
-const memorized = new Array(count).fill(1);
+const dp = new Array(arr.length).fill(1);
 
-for (let i = 1; i < count; i++) {
-  for (let j = 0; j < i; j++) {
-    if (inputList[i] > inputList[j]) {
-      memorized[i] = Math.max(memorized[i], memorized[j] + 1);
+for (let i = 1; i < dp.length; i++) {
+  for (let j = i - 1; j >= 0; j--) {
+    if (arr[i] > arr[j]) {
+      dp[i] = Math.max(dp[i], dp[j] + 1);
     }
   }
 }
-
-console.log(Math.max(...memorized));
+console.log(Math.max(...dp));
