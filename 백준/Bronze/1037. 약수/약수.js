@@ -13,8 +13,6 @@ let result = 0;
 if (arr.length % 2 === 0) {
   result =
     arr[Math.floor(arr.length / 2) - 1] * arr[Math.floor(arr.length / 2)];
-} else if (arr.length === 1) {
-  result = arr[Math.floor(arr.length / 2)] * arr[Math.floor(arr.length / 2)];
 } else if (arr.length % 2 === 1) {
   result = arr[Math.floor(arr.length / 2)] * arr[Math.floor(arr.length / 2)];
 }
