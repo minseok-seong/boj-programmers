@@ -13,7 +13,7 @@ function solution(citations) {
   }
   console.log(obj);
   for (let k in obj) {
-    if (obj[k] === +k) {
+    if (+obj[k] >= +k) {
       answer = k;
     }
   }
