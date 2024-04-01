@@ -15,6 +15,7 @@ function solution(numbers) {
             return 1
         }
     })
+   
     const hap = arr.reduce((a,b) =>a+(+b),0)
     return hap ===0 ? "0" : arr.join("")
    
