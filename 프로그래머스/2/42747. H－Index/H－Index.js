@@ -11,11 +11,12 @@ function solution(citations) {
     }
     obj[i] = count;
   }
-  console.log(obj);
+ 
   for (let k in obj) {
     if (+obj[k] <= +k) {
       answer = k;
         break;
+        
     }
   }
 
