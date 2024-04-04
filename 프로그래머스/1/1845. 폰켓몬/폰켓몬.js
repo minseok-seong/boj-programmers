@@ -5,12 +5,5 @@ function solution(nums) {
     var sort = arr.length
     console.log(sort,pickN)
       return arr.length > pickN ? pickN : arr.length
-    if(pickN <= sort){
-        
-        return pickN
-    }else{
-        return sort
-    }
    
-    return answer;
 }
