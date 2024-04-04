@@ -1,25 +1,18 @@
 function solution(participant, completion) {
     var answer = '';
-    var person = {}
-    for(let i=0;i<participant.length;i++){
-         const key = participant[i];
-        if (!person[key]) {
-        person[key] = [];
-    }
-    person[key].push(0);
-    }
-
-    for(let i=0;i<completion.length;i++){
-        if(person[completion[i]].length>0){
-            person[completion[i]].splice(person[completion[i]].indexOf(0),1)
-            person[completion[i]].push(1)
+    const obj = {}
+    for(let k in participant){
+        if(obj[participant[k]] ===undefined){
+            obj[participant[k]] =1
+        }else{
+            obj[participant[k]] +=1
         }
     }
-
-    for(let key in person){
-        if(person[key].includes(0)){
-            return key;
+    for(let k in completion){
+         if(obj[completion[k]] !==undefined){
+           obj[completion[k]]-=1
         }
     }
-    return answer;
+    const result = Object.keys(obj).filter(a => obj[a] ===1)
+    return result.join("");
 }
