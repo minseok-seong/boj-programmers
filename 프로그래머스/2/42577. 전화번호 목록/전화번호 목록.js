@@ -1,12 +1,9 @@
 function solution(phone_book) {
     let answer = true;
-    let arr = [...phone_book];
-
-    arr = arr.sort();
-
+    let arr = [...phone_book].sort();
     for(let i = 0; i < arr.length - 1; i++) {
-        let nextString = arr[i+1].substr(0, arr[i].length);
-        if (arr[i] === nextString){
+        let a = arr[i+1].slice(0, arr[i].length);
+        if (arr[i] === a){
             return false;
         }
     }
